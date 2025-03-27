@@ -20,7 +20,7 @@ const usersReducer = (state: UsersState, action: any): UsersState => {
       return {
         ...state,
         loading: false,
-        users: action.payload.users,
+        users: action.payload,
         error: null,
       };
     case "FETCH_ERROR":
@@ -38,7 +38,7 @@ export const UsersProvider: React.FC<{ children: React.ReactNode }> = ({
   const MOCK_URL = import.meta.env.VITE_MOCKY_URL;
   const AUTH_TOKEN = import.meta.env.VITE_AUTH_TOKEN;
   const MOCKY_ID = import.meta.env.VITE_MOCKY_ID;
-  const MOCKY_URL = `${MOCK_URL}/v3/${MOCKY_ID}`;
+  const MOCKY_URL = `${MOCK_URL}/templates/${MOCKY_ID}/data?delay=10`;
 
   const fetchUsers = async () => {
     dispatch({ type: "FETCH_START" });
