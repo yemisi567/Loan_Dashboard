@@ -12,7 +12,7 @@ import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Toaster position="top-right" richColors />
+      <Toaster richColors position="top-right"/>
       <AuthProvider>
         <UsersProvider>
           <ErrorBoundary>
